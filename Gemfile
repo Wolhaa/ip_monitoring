@@ -13,6 +13,7 @@ gem "hanami-view", "~> 2.2"
 gem 'byebug'
 gem "dry-types", "~> 1.7"
 gem "dry-operation"
+gem "net-ping"
 gem "puma"
 gem "rake"
 gem "sqlite3"
