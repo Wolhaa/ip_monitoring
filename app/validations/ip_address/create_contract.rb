@@ -16,10 +16,9 @@ module IpMonitoring
         rule(ip_address: :ip) do
           begin
             IPAddr.new(value)
-            repo = IpMonitoring::Repos::IpAddressRepo.new
-            key.failure("already exists") if repo.find_by_ip(value)
+            key.failure("IP address already exists") if IpMonitoring::Repos::IpAddressRepo.new.find_by_ip(value)
           rescue IPAddr::InvalidAddressError
-            key.failure("must be a valid IPv4 or IPv6 address")
+            key.failure("Invalid IP address format")
           end
         end
       end

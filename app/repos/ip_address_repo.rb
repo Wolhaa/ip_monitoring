@@ -1,13 +1,14 @@
 module IpMonitoring
   module Repos
     class IpAddressRepo < IpMonitoring::DB::Repo
-      def create(attributes)
-        puts attributes
-        ip_addresses.changeset(:create, attributes).commit
-      end
+      commands :create, update: :by_pk
 
       def find_by_ip(ip)
-        ip_addresses.where(ip: ip).one
+        ip_addresses.where(ip: ip).first
+      end
+
+      def find_by_id(id)
+        ip_addresses.by_pk(id).one
       end
     end
   end
