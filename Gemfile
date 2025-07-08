@@ -10,11 +10,13 @@ gem "hanami-router", "~> 2.2"
 gem "hanami-validations", "~> 2.2"
 gem "hanami-view", "~> 2.2"
 
+gem 'byebug'
 gem "dry-types", "~> 1.7"
 gem "dry-operation"
 gem "puma"
 gem "rake"
 gem "sqlite3"
+gem "pg"
 
 group :development do
   gem "hanami-webconsole", "~> 2.2"
