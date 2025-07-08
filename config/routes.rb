@@ -5,5 +5,6 @@ module IpMonitoring
      post "/ip_address", to: "ip_address.create"
      post "/ip_address/:id/enable", to: "ip_address.enable"
      post "/ip_address/:id/disable", to: "ip_address.disable"
+     delete "/ip_address/:id", to: "ip_address.delete"
   end
 end
