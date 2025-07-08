@@ -2,6 +2,6 @@
 
 module IpMonitoring
   class Routes < Hanami::Routes
-    # Add your routes here. See https://guides.hanamirb.org/routing/overview/ for details.
+     post "/ip_address", to: "ip_address.create"
   end
 end
