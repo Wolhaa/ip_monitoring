@@ -31,3 +31,12 @@ end
 group :cli, :development, :test do
   gem "hanami-rspec", "~> 2.2"
 end
+
+group :test do
+  # Database
+  gem "database_cleaner-sequel"
+
+  # Web integration
+  gem "capybara"
+  gem "rack-test"
+end
