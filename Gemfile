@@ -10,16 +10,18 @@ gem "hanami-router", "~> 2.2"
 gem "hanami-validations", "~> 2.2"
 gem "hanami-view", "~> 2.2"
 
-gem 'byebug'
 gem "dry-types", "~> 1.7"
 gem "dry-operation"
 gem "net-ping"
 gem "puma"
 gem "rake"
+gem 'sidekiq'
+gem 'rufus-scheduler'
 gem "sqlite3"
 gem "pg"
 
 group :development do
+  gem 'byebug'
   gem "hanami-webconsole", "~> 2.2"
 end
 
@@ -38,6 +40,7 @@ end
 group :test do
   # Database
   gem "database_cleaner-sequel"
+  gem 'faker'
 
   # Web integration
   gem "capybara"
