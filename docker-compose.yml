@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "2300:2300"
+    networks:
+      - ip_monitoring_net
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432/ip_monitoring_development
+    depends_on:
+      - db
+    cap_add:
+      - NET_RAW
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ip_monitoring_development
+    networks:
+      - ip_monitoring_net
+    ports:
+      - "5434:5432"
+
+networks:
+  ip_monitoring_net:
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.0/24
+        - subnet: "fd00::/64"
