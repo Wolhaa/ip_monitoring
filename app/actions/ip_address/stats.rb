@@ -16,7 +16,7 @@ module IpMonitoring
           ip_address = ip_address_repo.find_by_id(request.params[:id])
           time_from = request.params[:time_from]
           time_to = request.params[:time_to]
-          if ip_address && time_to > time_from
+          if ip_address && time_from && time_to && time_to > time_from
             stats = collect_stats(time_from, time_to, ip_address.id)
             empty_stats if stats.nil?
 

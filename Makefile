@@ -24,7 +24,3 @@ stop:
 # Удаление контейнеров, образов и данных
 clean:
 	$(COMPOSE) down --volumes --rmi all
-
-# Логи приложения
-logs:
-	$(COMPOSE) logs -f app

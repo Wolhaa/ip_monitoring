@@ -18,7 +18,6 @@ gem "rake"
 gem 'sidekiq'
 gem 'rufus-scheduler'
 gem "puma-rufus-scheduler"
-gem "sqlite3"
 gem "pg"
 
 group :development do
