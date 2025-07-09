@@ -45,3 +45,5 @@ if puma_cluster_mode
     Hanami.shutdown
   end
 end
+
+plugin "rufus-scheduler"

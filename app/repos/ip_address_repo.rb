@@ -10,6 +10,10 @@ module IpMonitoring
       def find_by_id(id)
         ip_addresses.by_pk(id).one
       end
+
+      def enabled
+        ip_addresses.where(enabled: true)
+      end
     end
   end
 end
